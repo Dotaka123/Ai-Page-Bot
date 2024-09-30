@@ -7,7 +7,7 @@ const { handlePostback } = require('./handles/handlePostback');
 const app = express();
 app.use(bodyParser.json());
 
-const VERIFY_TOKEN = 'pagebot';
+const VERIFY_TOKEN = 'EAAI12hLrtqEBO0USrYhZAl5MgWAqBmAlouZAYMMtl5OeremmS1aY7ePjGcYzhZAVGbD5ZCJYpO9Gsy6U4a0ymEhLqFiiIy3Y6BIM0FdizNFp9SkULOFRMVua1aRfCliRHs7zlZCds7p0Qy0W0ZB3xSBftZBvXi7L0ZCmFmG2Wwy7knxmDq4aRZCDFQ135ZBRfHDjMh';
 
 const PAGE_ACCESS_TOKEN = fs.readFileSync('token.txt', 'utf8').trim();
 
