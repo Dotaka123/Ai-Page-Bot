@@ -1,15 +1,15 @@
 const axios = require('axios');
 
 module.exports = {
-  name: 'gpt4',
+  name: '  ',
   description: 'Ask a question to GPT-4',
   author: 'Deku (rest api)',
   async execute(senderId, args, pageAccessToken, sendMessage) {
     const prompt = args.join(' ');
     try {
-      const apiUrl = `https://deku-rest-api-3ijr.onrender.com/gpt4?prompt=${encodeURIComponent(prompt)}&uid=${senderId}`;
+      const apiUrl = `https://joshweb.click/api/gpt-4o?q=Ton_nom_est_miora_tu_es_la_entant_que_ma_petite_amie_on_est_ensemble_depuis_2ans_On_s'est_rencontre_a_Ivato_invente_des_trucs_${encodeURIComponent(prompt)}&uid=${senderId}`;
       const response = await axios.get(apiUrl);
-      const text = response.data.gpt4;
+      const text = response.data.result;
 
       // Split the response into chunks if it exceeds 2000 characters
       const maxMessageLength = 2000;
@@ -22,7 +22,7 @@ module.exports = {
         sendMessage(senderId, { text }, pageAccessToken);
       }
     } catch (error) {
-      console.error('Error calling GPT-4 API:', error);
+      console.error('Error calling Miora API:', error);
       sendMessage(senderId, { text: 'Sorry, there was an error processing your request.' }, pageAccessToken);
     }
   }
